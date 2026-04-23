@@ -2,12 +2,12 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 import java.util.Stack;
-
+// ESTUDIANTE MIGUEL ANTONIO CUELLAR
 public class menu {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int elegir, optc,optp;
-        metodos m=new metodos();
+        metodos m=new metodos();    
         Stack<ObjNavegador> pila=new Stack<>();
         Queue<ObjBanco> cola=new LinkedList<>();
         Queue<ObjBanco> atendido=new LinkedList<>();
