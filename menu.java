@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -7,6 +9,9 @@ public class menu {
         int elegir, optc,optp;
         metodos m=new metodos();
         Stack<ObjNavegador> pila=new Stack<>();
+        Queue<ObjBanco> cola=new LinkedList<>();
+        Queue<ObjBanco> atendido=new LinkedList<>();
+        Queue<ObjBanco> pendiente=new LinkedList<>();
         boolean seguir=true, secuenciap=true;
         while (seguir) {
 
@@ -51,30 +56,34 @@ public class menu {
                 System.out.println();
                 System.out.println("Que desea realizar?");
                 System.out.println("1) Llenar Cola");
-                System.out.println("2) Agregar Cola");
-                System.out.println("3) Retroceder Cola");
-                System.out.println("4) Mostrar Cola");
-                System.out.println("5) Salir");
+                System.out.println("2) Atender cliente");
+                System.out.println("3) Siguiente cliente");
+                System.out.println("4) Mostrar toda la cola");
+                System.out.println("5) Mostrar atendidos y pendientes");
+                System.out.println("6) Salir");
                 optc=sc.nextInt();
                 switch (optc) {
                     case 1:
-                        
+                        m.LlenarCola(cola);
                     break;
                     case 2:
-                        
+                        m.AtenderCliente(cola);
                     break;
                     case 3:
-                        
+                        m.Siguienteenfila(cola);
                     break;
                     case 4:
-                        
+                        m.LosqueFaltan(cola);
                     break;
                     case 5:
+                        m.AtendidosyNO(cola,atendido,pendiente);
+                    break;
+                    case 6:
                         System.out.println("Hasta pronto");
                         seguir=false;
                     break;
                     default:
-                        System.out.println("Opcion no valida ingrese un numero dentro del 1-9");
+                        System.out.println("Opcion no valida ingrese un numero dentro del 1-6");
                     break;
                 }
 
